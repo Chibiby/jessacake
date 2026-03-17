@@ -1,5 +1,7 @@
 # Vercel Deployment Guide
 
+**Last Updated:** March 18, 2026
+
 ## Environment Variables Required
 
 Add these to Vercel Project Settings → Environment Variables:
