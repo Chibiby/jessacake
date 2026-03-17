@@ -18,7 +18,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logo.jpg"
-            alt="Jessa Cake Delights"
+            alt="Jessa Cakes"
             width={40}
             height={40}
             className="rounded-full"
@@ -27,7 +27,7 @@ export function Navbar() {
             className="text-xl font-bold text-rose"
             style={{ fontFamily: "var(--font-accent)" }}
           >
-            Jessa Cake
+            Jessa Cakes
           </span>
         </Link>
 

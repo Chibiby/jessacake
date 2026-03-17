@@ -55,7 +55,7 @@ export const DEFAULT_CATEGORIES = [
 // --- Business Info ---
 
 export const BUSINESS = {
-  name: "Jessa Cake Delights",
+  name: "Jessa Cakes",
   tagline: "Making Every Celebration Sweeter",
   address: "Malandag, Malungon, Sarangani Province, Philippines",
   phone: "", // To be confirmed with owner

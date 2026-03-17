@@ -1,5 +1,5 @@
 // ============================================================
-// Database entity types for Jessa Cake Delights
+// Database entity types for Jessa Cakes
 // Mirrors the Supabase PostgreSQL schema
 // ============================================================
 

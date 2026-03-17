@@ -1,7 +1,7 @@
--- ============================================================
--- Jessa Cake Delights — Product Seed Data
+-- =============================================================
+-- Jessa Cakes — Product Seed Data
 -- Run this AFTER running seed.sql (requires categories to exist)
--- ============================================================
+-- =============================================================
 
 -- This file seeds 16 real products based on the catalog images
 -- Images are stored in public/products/ folder

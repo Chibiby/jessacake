@@ -1,7 +1,7 @@
--- ============================================================
--- Jessa Cakes Delights — Database Schema & Seed Data
+-- =============================================================
+-- Jessa Cakes — Database Schema & Seed Data
 -- Run this in your Supabase SQL Editor
--- ============================================================
+-- =============================================================
 
 -- Enable UUID extension (usually already enabled)
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -237,14 +237,14 @@ ON CONFLICT (slug) DO NOTHING;
 -- SEED DATA: Site Settings
 -- ============================================================
 INSERT INTO site_settings (key, value) VALUES
-  ('business_name', 'Jessa Cakes Delights'),
+  ('business_name', 'Jessa Cakes'),
   ('business_address', 'Malandag, Malungon, Sarangani Province, Philippines'),
   ('business_phone', ''),
   ('business_email', ''),
   ('operating_hours', 'Mon-Sat 8:00 AM - 6:00 PM'),
   ('delivery_fee', '100.00'),
   ('delivery_areas', 'Within Malandag and nearby areas'),
-  ('pickup_address', 'Jessa Cakes Delights Shop, Malandag, Malungon, Sarangani Province'),
+  ('pickup_address', 'Jessa Cakes Shop, Malandag, Malungon, Sarangani Province'),
   ('social_facebook', ''),
   ('social_instagram', ''),
   ('minimum_lead_time_days', '2')
