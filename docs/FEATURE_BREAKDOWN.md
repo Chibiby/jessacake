@@ -128,7 +128,7 @@ Handle the two fulfillment methods with appropriate data collection, fee calcula
 ### Features
 
 #### Pickup
-- Display pickup location (Malandag, Zamboanga del Sur) and hours when selected
+- Display pickup location (Malandag, Malungon, Sarangani Province) and hours when selected
 - Date and time picker for preferred pickup
 - No delivery fee applied
 - Payment label: "Cash on Pickup"

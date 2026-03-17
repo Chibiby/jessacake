@@ -92,7 +92,7 @@ Product Detail → [Order This Cake] → Order Form
 
 1. In the order form, guest selects **"Pickup"** as fulfillment type
 2. System displays:
-   - Pickup address: `Jessa Cakes Delights, Malandag, Zamboanga del Sur`
+   - **Pickup address:** Jessa Cakes Delights Shop, Malandag, Malungon, Sarangani Province
    - Operating hours: `Mon–Sat, 8:00 AM – 6:00 PM`
 3. Guest selects preferred **pickup date** (enforced: today + lead time minimum)
 4. Guest selects preferred **pickup time** (within operating hours)

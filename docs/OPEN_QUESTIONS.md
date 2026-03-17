@@ -85,7 +85,7 @@
 
 | #  | Question                                                              | Status   | Answer |
 | -- | --------------------------------------------------------------------- | -------- | ------ |
-| L1 | What is the full business address?                                    | **Partial** | Located in Malandag, Zamboanga del Sur, Philippines (from image 6: "Jessa Cakes Malandag"). Exact street address needed. |
+| L1 | What is the full business address?                                    | **Resolved** | Malandag, Malungon, Sarangani Province, Philippines |
 | L2 | What is the business phone number?                                    | Open     |        |
 | L3 | What is the business email?                                           | Open     |        |
 | L4 | Do you need a Privacy Policy page? (Recommended: Yes)                 | Open     |        |

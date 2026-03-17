@@ -7,7 +7,7 @@
 
 ## What This Project Is
 
-**Jessa Cakes Delights** is the official website for a local cake and desserts business based in **Malandag, Zamboanga del Sur, Philippines**. It combines:
+**Jessa Cakes Delights** is the official website for a local cake and desserts business based in **Malandag, Malungon, Sarangani Province, Philippines**. It combines:
 1. A **public-facing marketing website** where customers browse cakes and place orders
 2. A **protected admin dashboard** where the owner manages products and orders
 
@@ -16,7 +16,7 @@ This is a **real business tool** — not a demo or portfolio piece. Every decisi
 ### Business History
 - **2018**: Founded as a home-based cake business by Jessa. Orders through personal contacts and social media.
 - **Pandemic era**: Demand for home-delivered cakes grew. Business adapted with online ordering and delivery, gaining wider recognition.
-- **2021**: Expanded to a **dedicated physical shop** in Malandag due to growing popularity.
+- **2021**: Expanded to a **dedicated physical shop** in Malandag, Malungon, Sarangani Province due to growing popularity.
 - **Today**: Thrives combining homemade charm with professional service.
 
 ### Brand Assets (Available in `files/` folder)
@@ -32,9 +32,9 @@ This is a **real business tool** — not a demo or portfolio piece. Every decisi
 1. **Cash only** — No online payments. All payments are cash on pickup or cash on delivery.
 2. **No customer accounts** — Guests order without registering. Contact info is collected per order.
 3. **Made-to-order cakes** — Most products require advance ordering (2–3 days default lead time).
-4. **Two fulfillment types** — Pickup (at the shop in Malandag) or Delivery (within Malandag and nearby areas).
+4. **Two fulfillment types** — Pickup (at the shop in Malandag, Malungon, Sarangani Province) or Delivery (within Malandag, Malungon, Sarangani Province area).
 5. **Delivery fee** — Flat rate, configurable by admin. Applied only to delivery orders.
-6. **Single location** — One physical shop in **Malandag, Zamboanga del Sur, Philippines** (since 2021).
+6. **Single location** — One physical shop in **Malandag, Malungon, Sarangani Province, Philippines** (since 2021).
 7. **Small team** — 1 admin (owner Jessa), possibly 1–2 staff. No complex role hierarchy in MVP.
 8. **Low volume** — Orders are manageable through a dashboard without automation.
 9. **Product visibility** — Admin can show/hide products without deleting them.

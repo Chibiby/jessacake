@@ -4,7 +4,7 @@
 
 ## Product Summary
 
-Jessa Cakes Delights is a responsive web application for a local cake business based in **Malandag, Zamboanga del Sur, Philippines**. Founded in 2018 as a home-based bakery and operating from a dedicated shop since 2021, the business specializes in custom-designed cakes for birthdays, christenings, graduations, Valentine's Day, formal celebrations, and character-themed events.
+Jessa Cakes Delights is a responsive web application for a local cake business based in **Malandag, Malungon, Sarangani Province, Philippines**. Founded in 2018 as a home-based bakery and operating from a dedicated shop since 2021, the business specializes in custom-designed cakes for birthdays, christenings, graduations, Valentine's Day, formal celebrations, and character-themed events.
 
 The website combines a public-facing marketing storefront with an admin dashboard. Customers can browse products (priced from ₱180 to ₱3,000+) and place orders for pickup or delivery (cash only). The admin manages products, categories, and orders through a protected dashboard.
 

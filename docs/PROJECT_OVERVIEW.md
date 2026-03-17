@@ -4,13 +4,13 @@
 
 ## Business Overview
 
-**Jessa Cakes Delights** is a local cake and desserts business based in **Malandag, Zamboanga del Sur, Philippines**. The business specializes in custom-designed cakes for birthdays, christenings, graduations, Valentine's Day, formal celebrations, and character-themed events, along with cupcake sets and desserts.
+**Jessa Cakes Delights** is a local cake and desserts business based in **Malandag, Malungon, Sarangani Province, Philippines**. The business specializes in custom-designed cakes for birthdays, christenings, graduations, Valentine's Day, formal celebrations, and character-themed events, along with cupcake sets and desserts.
 
 ### Business History
 
 - **2018** — Founded as a small home-based cake business. Orders came through personal contacts and social media.
 - **Pandemic era** — Demand for home-delivered cakes grew significantly. The business adapted with online ordering and delivery services, gaining wider recognition and a loyal customer base.
-- **2021** — Expanded to a **dedicated physical shop** due to increasing orders and growing popularity, improving production capacity and customer experience.
+- **2021** — Expanded to a **dedicated physical shop** due to increasing orders and growing popularity, improving production capacity and customer experience in **Malandag, Malungon, Sarangani Province, Philippines**.
 - **Today** — Continues to thrive, combining homemade charm with professional service. Offers high-quality cakes, creative designs, and convenient online and in-store ordering.
 
 The owner ("Jessa") manages the business with a small team. The business currently relies on social media (Facebook, Instagram) for marketing and takes orders via chat/messaging. This website will formalize the online presence, provide a professional storefront, and streamline the ordering process.

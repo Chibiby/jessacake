@@ -272,11 +272,11 @@ Key-value store for configurable business settings.
 | `business_name`        | `"Jessa Cakes Delights"`                   |
 | `business_phone`       | `"+639XXXXXXXXX"` *(confirm with owner)*   |
 | `business_email`       | `"jessacakesdelights@gmail.com"` *(confirm)* |
-| `business_address`     | `"Malandag, Zamboanga del Sur, Philippines"` |
+|  ('business_address', 'Malandag, Malungon, Sarangani Province, Philippines'),"` |
 | `operating_hours`      | `"Mon-Sat 8:00 AM - 6:00 PM"`             |
 | `delivery_fee`         | `"100.00"` *(confirm with owner)*          |
 | `delivery_areas`       | `"Within Malandag and nearby areas"`       |
-| `pickup_address`       | `"Jessa Cakes Delights Shop, Malandag, Zamboanga del Sur"` |
+|  ('pickup_address', 'Jessa Cakes Delights Shop, Malandag, Malungon, Sarangani Province'),"` |
 | `social_facebook`      | `"https://facebook.com/jessacakesmalandag"` *(confirm)* |
 | `social_instagram`     | `""` *(confirm if exists)*                 |
 | `minimum_lead_time_days` | `"2"`                                    |
