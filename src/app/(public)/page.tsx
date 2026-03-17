@@ -26,7 +26,8 @@ export default async function HomePage() {
             Welcome to
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Jessa Cakes
+            Jessa Cakes{" "}
+            <span className="text-rose">Delights</span>
           </h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             Making every celebration sweeter. Handcrafted cakes for birthdays,
