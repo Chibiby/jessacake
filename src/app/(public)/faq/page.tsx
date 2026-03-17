@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Frequently asked questions about ordering cakes, delivery, pickup, and more at Jessa Cake Delights.",
+    "Frequently asked questions about ordering cakes, delivery, pickup, and more at Jessa Cakes.",
 };
 
 const faqs = [

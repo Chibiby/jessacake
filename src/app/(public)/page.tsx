@@ -26,8 +26,7 @@ export default async function HomePage() {
             Welcome to
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Jessa Cake{" "}
-            <span className="text-rose">Delights</span>
+            Jessa Cakes
           </h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             Making every celebration sweeter. Handcrafted cakes for birthdays,
@@ -165,7 +164,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-foreground">Our Story</h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            Jessa Cake Delights began in 2018 as a small home-based cake
+            Jessa Cakes began in 2018 as a small home-based cake
             business. What started as a passion for baking has grown into a
             beloved local bakery with a dedicated shop in Malandag, serving the
             community with high-quality cakes and creative designs.

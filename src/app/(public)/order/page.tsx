@@ -5,7 +5,7 @@ import { OrderForm } from "@/components/order-form";
 export const metadata: Metadata = {
   title: "Place an Order",
   description:
-    "Order a custom cake from Jessa Cake Delights. Choose pickup or delivery in Malandag, Malungon, Sarangani Province.",
+    "Order a custom cake from Jessa Cakes. Choose pickup or delivery in Malandag, Malungon, Sarangani Province.",
 };
 
 export default function OrderPage() {

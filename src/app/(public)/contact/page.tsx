@@ -5,7 +5,7 @@ import { BUSINESS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Jessa Cake Delights. Visit our shop in Malandag, Malungon, Sarangani Province or reach out via phone and email.",
+    "Get in touch with Jessa Cakes. Visit our shop in Malandag, Malungon, Sarangani Province or reach out via phone and email.",
 };
 
 export default function ContactPage() {
@@ -102,7 +102,7 @@ export default function ContactPage() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Jessa Cake Delights Location"
+            title="Jessa Cakes Location"
             className="w-full"
           />
         </div>

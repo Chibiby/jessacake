@@ -15,7 +15,7 @@ export function Footer() {
                 className="text-lg font-bold text-rose"
                 style={{ fontFamily: "var(--font-accent)" }}
               >
-                Jessa Cake
+                Jessa Cakes
               </span>
             </div>
             <p className="text-sm text-muted-foreground">

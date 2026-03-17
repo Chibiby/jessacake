@@ -22,8 +22,8 @@ const dancingScript = Dancing_Script({
 
 export const metadata: Metadata = {
   title: {
-    default: "Jessa Cake Delights | Custom Cakes in Malandag",
-    template: "%s | Jessa Cake Delights",
+    default: "Jessa Cakes | Custom Cakes in Malandag",
+    template: "%s | Jessa Cakes",
   },
   description:
     "Order custom cakes for birthdays, christenings, graduations, and celebrations. Handcrafted with love in Malandag, Malungon, Sarangani Province.",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "order cakes online",
   ],
   openGraph: {
-    title: "Jessa Cake Delights",
+    title: "Jessa Cakes",
     description:
       "Handcrafted cakes for every celebration. Order online for pickup or delivery in Malandag, Malungon.",
     type: "website",

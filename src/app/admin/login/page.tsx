@@ -53,14 +53,14 @@ export default function AdminLoginPage() {
           <div className="flex flex-col items-center mb-6">
             <Image
               src="/logo.jpg"
-              alt="Jessa Cake Delights"
+              alt="Jessa Cakes"
               width={64}
               height={64}
               className="rounded-full mb-3"
             />
             <h1 className="text-xl font-bold text-foreground">Admin Login</h1>
             <p className="text-sm text-muted-foreground">
-              Jessa Cake Delights Dashboard
+              Jessa Cakes Dashboard
             </p>
           </div>
 

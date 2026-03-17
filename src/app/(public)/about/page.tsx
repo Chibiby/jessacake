@@ -4,7 +4,7 @@ import { Cake, Heart, Store, Sparkles } from "lucide-react";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Jessa Cake Delights — our story, our passion for baking, and how we grew from a home kitchen to a beloved local bakery in Malandag.",
+    "Learn about Jessa Cakes — our story, our passion for baking, and how we grew from a home kitchen to a beloved local bakery in Malandag.",
 };
 
 export default function AboutPage() {
@@ -14,14 +14,14 @@ export default function AboutPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-foreground">About Us</h1>
         <p className="mt-2 text-lg text-muted-foreground">
-          The story behind Jessa Cake Delights
+          The story behind Jessa Cakes
         </p>
       </div>
 
       {/* Story */}
       <div className="prose prose-lg max-w-none">
         <p className="text-muted-foreground leading-relaxed">
-          Jessa Cake Delights began in <strong>2018</strong> as a small
+          Jessa Cakes began in <strong>2018</strong> as a small
           home-based cake business. The owner&apos;s passion for baking inspired
           her to create cakes and desserts for family, friends, and local
           customers. At first, orders were fulfilled through personal contacts
@@ -30,20 +30,20 @@ export default function AboutPage() {
         <p className="text-muted-foreground leading-relaxed mt-4">
           During the <strong>pandemic era</strong>, when people were limited in
           going out, the demand for home-delivered cakes grew significantly.
-          Jessa Cake Delights adapted by offering online ordering and delivery
+          Jessa Cakes adapted by offering online ordering and delivery
           services, allowing customers to celebrate special occasions safely.
           This period became a crucial turning point for the business, helping it
           gain wider recognition and a loyal customer base.
         </p>
         <p className="text-muted-foreground leading-relaxed mt-4">
           By <strong>2021</strong>, due to the increasing number of orders and
-          growing popularity, Jessa Cake Delights expanded and secured its own
+          growing popularity, Jessa Cakes expanded and secured its own
           dedicated shop in <strong>Malandag, Malungon, Sarangani Province</strong>. Having
           a physical location allowed the business to operate more efficiently,
           improve production capacity, and provide a better customer experience.
         </p>
         <p className="text-muted-foreground leading-relaxed mt-4">
-          Today, Jessa Cake Delights continues to thrive, combining its
+          Today, Jessa Cakes continues to thrive, combining its
           homemade charm with professional service, delivering high-quality
           cakes, creative designs, and convenient online and in-store ordering
           options. The business aims to make every celebration sweeter and more

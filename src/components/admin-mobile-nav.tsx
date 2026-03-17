@@ -54,7 +54,7 @@ export function AdminMobileNav({ links, userEmail }: AdminMobileNavProps) {
                 className="text-lg font-bold text-rose"
                 style={{ fontFamily: "var(--font-accent)" }}
               >
-                Jessa Cake
+                Jessa Cakes
               </span>
               <button
                 onClick={() => setIsOpen(false)}

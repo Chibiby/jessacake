@@ -26,7 +26,7 @@ export async function generateMetadata({
     title: product.name,
     description:
       product.description ||
-      `Order ${product.name} from Jessa Cake Delights. Pickup or delivery in Malandag.`,
+      `Order ${product.name} from Jessa Cakes. Pickup or delivery in Malandag.`,
   };
 }
 

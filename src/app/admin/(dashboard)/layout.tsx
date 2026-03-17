@@ -50,7 +50,7 @@ export default async function AdminDashboardLayout({
         <div className="flex h-16 items-center gap-2 border-b border-sidebar-border px-6">
           <Image
             src="/logo.jpg"
-            alt="Jessa Cake"
+            alt="Jessa Cakes"
             width={32}
             height={32}
             className="rounded-full"
@@ -59,7 +59,7 @@ export default async function AdminDashboardLayout({
             className="text-lg font-bold text-rose"
             style={{ fontFamily: "var(--font-accent)" }}
           >
-            Jessa Cake
+            Jessa Cakes
           </span>
         </div>
 
@@ -110,7 +110,7 @@ export default async function AdminDashboardLayout({
             <div className="md:hidden flex items-center gap-2">
               <Image
                 src="/logo.jpg"
-                alt="Jessa Cake"
+                alt="Jessa Cakes"
                 width={28}
                 height={28}
                 className="rounded-full"
