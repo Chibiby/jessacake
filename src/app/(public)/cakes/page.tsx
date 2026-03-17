@@ -16,10 +16,17 @@ interface CakesPageProps {
 
 export default async function CakesPage({ searchParams }: CakesPageProps) {
   const { category } = await searchParams;
-  const [products, categories] = await Promise.all([
-    getProducts(category),
-    getCategories(),
-  ]);
+  let products = [];
+  let categories = [];
+  try {
+    [products, categories] = await Promise.all([
+      getProducts(category),
+      getCategories(),
+    ]);
+  } catch (error) {
+    console.error("Failed to load cakes data:", error);
+    // Continue with empty arrays
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

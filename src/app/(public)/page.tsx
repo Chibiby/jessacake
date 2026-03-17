@@ -6,7 +6,13 @@ import { getFeaturedProducts } from "@/lib/queries";
 import { ProductCard } from "@/components/product-card";
 
 export default async function HomePage() {
-  const featuredProducts = await getFeaturedProducts(6);
+  let featuredProducts = [];
+  try {
+    featuredProducts = await getFeaturedProducts(6);
+  } catch (error) {
+    console.error("Failed to load featured products:", error);
+    // Continue with empty products array
+  }
 
   return (
     <>
