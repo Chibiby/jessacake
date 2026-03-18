@@ -3,6 +3,8 @@ import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { cn } from "@/lib/utils";
+import { getOrderById } from "@/lib/queries";
+import { formatDate } from "@/lib/helpers";
 
 export const metadata: Metadata = {
   title: "Order Confirmed",
@@ -17,6 +19,25 @@ export default async function OrderConfirmationPage({
   searchParams,
 }: ConfirmationPageProps) {
   const { ref } = await searchParams;
+  
+  // Try to get order details if reference number is provided
+  let order = null;
+  if (ref) {
+    try {
+      // Find order by reference number
+      const { createClient } = await import("@/lib/supabase/server");
+      const supabase = await createClient();
+      const { data } = await supabase
+        .from("orders")
+        .select("*")
+        .eq("reference_number", ref)
+        .single();
+      order = data;
+    } catch (error) {
+      // If order not found, continue without order details
+      console.log("Order not found for reference:", ref);
+    }
+  }
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-20 sm:px-6 lg:px-8 text-center">
@@ -42,6 +63,29 @@ export default async function OrderConfirmationPage({
         <p className="mt-2 text-xs text-muted-foreground">
           Please save this number for tracking your order.
         </p>
+        
+        {order && (
+          <div className="mt-4 pt-4 border-t border-border">
+            <p className="text-sm text-muted-foreground mb-2">
+              <strong>Pickup/Delivery Details</strong>
+            </p>
+            <div className="space-y-1">
+              <p className="text-sm">
+                Type: <span className="capitalize">{order.fulfillment_type}</span>
+              </p>
+              {order.preferred_date && (
+                <p className="text-sm">
+                  Date: {formatDate(order.preferred_date)}
+                </p>
+              )}
+              {order.preferred_time && (
+                <p className="text-sm">
+                  Time: {order.preferred_time}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="mt-8 space-y-3">
