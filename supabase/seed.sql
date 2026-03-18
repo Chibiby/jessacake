@@ -125,6 +125,7 @@ CREATE TABLE IF NOT EXISTS customer_details (
   last_name TEXT NOT NULL,
   email TEXT NOT NULL,
   phone TEXT NOT NULL,
+  facebook_link TEXT,
   created_at TIMESTAMPTZ DEFAULT now()
 );
 

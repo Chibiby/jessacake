@@ -33,6 +33,7 @@ export function OrderForm() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [facebookLink, setFacebookLink] = useState("");
   const [selectedProductId, setSelectedProductId] = useState("");
   const [selectedSizeId, setSelectedSizeId] = useState("");
   const [selectedFlavorId, setSelectedFlavorId] = useState("");
@@ -132,6 +133,15 @@ export function OrderForm() {
       return;
     }
 
+    // Validate Facebook link if provided
+    if (facebookLink.trim()) {
+      const facebookUrlPattern = /^https?:\/\/(www\.)?(facebook\.com|fb\.com|m\.facebook\.com)\/.+/i;
+      if (!facebookUrlPattern.test(facebookLink.trim())) {
+        setError("Please enter a valid Facebook profile URL (e.g., https://www.facebook.com/username)");
+        return;
+      }
+    }
+
     setSubmitting(true);
 
     try {
@@ -173,6 +183,7 @@ export function OrderForm() {
           last_name: lastName,
           email: email || null,
           phone: phone,
+          facebook_link: facebookLink.trim() || null,
         });
 
       if (custError) throw custError;
@@ -290,6 +301,21 @@ export function OrderForm() {
               required
               className="w-full rounded-lg border border-input px-3 py-2 text-sm focus:border-rose focus:ring-1 focus:ring-rose/30 outline-none"
             />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-foreground mb-1">
+              Facebook Profile Link (Optional)
+            </label>
+            <input
+              type="url"
+              value={facebookLink}
+              onChange={(e) => setFacebookLink(e.target.value)}
+              placeholder="https://www.facebook.com/yourprofile"
+              className="w-full rounded-lg border border-input px-3 py-2 text-sm focus:border-rose focus:ring-1 focus:ring-rose/30 outline-none"
+            />
+            <p className="text-xs text-muted-foreground mt-1">
+              Share your Facebook profile for easier communication (e.g., https://www.facebook.com/username)
+            </p>
           </div>
         </div>
       </div>
