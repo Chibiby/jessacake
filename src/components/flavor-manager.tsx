@@ -40,29 +40,58 @@ export function FlavorManager({ flavors: initialFlavors }: FlavorManagerProps) {
     try {
       const supabase = createClient();
 
-      // Check if a flavor with the same name already exists as a product_flavor
-      // Flavors are stored per-product in product_flavors table
-      // For global flavor management, we'll add to a master flavors list
-      // But since the DB uses product_flavors directly, we store in a separate table or approach
+      // Check if flavor already exists in any product
+      const { data: existing } = await supabase
+        .from("product_flavors")
+        .select("id")
+        .eq("name", newName.trim())
+        .limit(1)
+        .single();
 
-      // Since the DB schema uses product_flavors (per-product), this manager
-      // acts as a reference view. We'll query distinct flavor names.
-      // For adding, we just track the name in state (it gets used in ProductForm).
+      if (existing) {
+        setError("Flavor already exists.");
+        setSaving(false);
+        return;
+      }
 
-      // Actually, let me check if there's a master flavors table...
-      // The schema only has product_flavors. So we'll manage flavors as unique names
-      // across all product_flavors entries.
+      // Add new flavor to a dummy product entry (or we can create a special "master" product)
+      // For now, let's add it to the first available product
+      const { data: firstProduct } = await supabase
+        .from("products")
+        .select("id")
+        .eq("is_visible", true)
+        .limit(1)
+        .single();
 
-      // For a "global" add, there's nothing to insert until it's assigned to a product.
-      // Instead, let's just validate and show it in the list.
+      if (!firstProduct) {
+        setError("No products available. Create a product first, then add flavors to it.");
+        setSaving(false);
+        return;
+      }
 
-      // Better approach: We can still track this. Let the user add flavors here
-      // and they appear as options in the ProductForm.
-      // But without a master table, we'll just show existing ones.
+      // Add the flavor to the first product
+      const { error: insertErr } = await supabase
+        .from("product_flavors")
+        .insert({ 
+          product_id: firstProduct.id,
+          name: newName.trim(),
+          sort_order: 999
+        });
 
-      setError("Flavors are managed per-product. Use the product form to add flavors to specific products.");
-      setSaving(false);
-      return;
+      if (insertErr) throw insertErr;
+
+      // Add to local state
+      setFlavors(prev => [...prev, { 
+        id: Date.now().toString(), // temporary ID
+        name: newName.trim(), 
+        productCount: 1 
+      }]);
+      
+      setNewName("");
+      setShowAdd(false);
+      setSuccess("Flavor added successfully! It's now available for all products.");
+      router.refresh();
+      setTimeout(() => setSuccess(""), 3000);
     } catch (err: any) {
       setError(err.message || "Failed to add flavor.");
     } finally {
@@ -228,7 +257,7 @@ export function FlavorManager({ flavors: initialFlavors }: FlavorManagerProps) {
               ) : (
                 <tr>
                   <td colSpan={3} className="px-4 py-12 text-center text-muted-foreground">
-                    No flavors yet. Add flavors to products using the product form.
+                    No flavors yet. Use the "Add Flavor" button below to create your first flavor.
                   </td>
                 </tr>
               )}
@@ -237,8 +266,52 @@ export function FlavorManager({ flavors: initialFlavors }: FlavorManagerProps) {
         </div>
       </div>
 
+      {/* Add Flavor Section */}
+      <div className="mt-6 rounded-xl border border-border bg-white p-6">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-lg font-semibold text-foreground">Add New Flavor</h3>
+          {!showAdd && (
+            <button
+              onClick={() => setShowAdd(true)}
+              className="inline-flex items-center gap-1 rounded-lg border border-rose px-3 py-1.5 text-xs font-medium text-rose hover:bg-rose-faint transition-colors"
+            >
+              <Plus className="h-3.5 w-3.5" />
+              Add Flavor
+            </button>
+          )}
+        </div>
+        
+        {showAdd && (
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={newName}
+              onChange={(e) => setNewName(e.target.value)}
+              placeholder="e.g., Chocolate, Vanilla, Ube"
+              className="flex-1 rounded-lg border border-input px-3 py-2 text-sm focus:border-rose focus:ring-1 focus:ring-rose/30 outline-none"
+              onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); handleAdd(); } }}
+            />
+            <button
+              onClick={handleAdd}
+              disabled={saving}
+              className="inline-flex items-center gap-1 rounded-lg border border-rose px-3 py-1.5 text-xs font-medium text-rose hover:bg-rose-faint transition-colors disabled:opacity-50"
+            >
+              <Plus className="h-3.5 w-3.5" />
+              {saving ? "Adding..." : "Add"}
+            </button>
+            <button
+              onClick={() => { setShowAdd(false); setNewName(""); setError(""); }}
+              className="inline-flex items-center gap-1 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-muted transition-colors"
+            >
+              <X className="h-3.5 w-3.5" />
+              Cancel
+            </button>
+          </div>
+        )}
+      </div>
+
       <p className="mt-4 text-xs text-muted-foreground">
-        Flavors are managed per-product. Add or remove flavors when creating or editing a product.
+        Add new flavors globally or manage existing ones. Flavors can be assigned to products when creating or editing them.
         Renaming or deleting a flavor here applies the change across all products that use it.
       </p>
     </div>
