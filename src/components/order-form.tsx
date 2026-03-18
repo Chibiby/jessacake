@@ -36,7 +36,7 @@ export function OrderForm() {
   const [selectedProductId, setSelectedProductId] = useState("");
   const [selectedSizeId, setSelectedSizeId] = useState("");
   const [selectedFlavorId, setSelectedFlavorId] = useState("");
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState("");
   const [fulfillment, setFulfillment] = useState<"pickup" | "delivery">("pickup");
   const [deliveryAddress, setDeliveryAddress] = useState("");
   const [preferredDate, setPreferredDate] = useState("");
@@ -77,8 +77,9 @@ export function OrderForm() {
   const selectedFlavor = selectedProduct?.flavors?.find((f) => f.id === selectedFlavorId);
 
   // Calculate pricing
+  const quantityNum = parseInt(quantity) || 1;
   const unitPrice = selectedSize?.price ?? selectedProduct?.base_price ?? 0;
-  const subtotal = unitPrice * quantity;
+  const subtotal = unitPrice * quantityNum;
   const deliveryFee = fulfillment === "delivery" ? 100 : 0;
   const total = subtotal + deliveryFee;
 
@@ -124,6 +125,10 @@ export function OrderForm() {
     }
     if (selectedProduct && selectedProduct.flavors?.length > 0 && !selectedFlavorId) {
       setError("Please select a flavor.");
+      return;
+    }
+    if (!quantity || parseInt(quantity) < 1) {
+      setError("Please enter a valid quantity.");
       return;
     }
 
@@ -182,7 +187,7 @@ export function OrderForm() {
           product_name: selectedProduct?.name || "Unknown Product",
           size_name: selectedSize?.name || "Standard",
           flavor_name: selectedFlavor?.name || null,
-          quantity: quantity,
+          quantity: quantityNum,
           unit_price: unitPrice,
           line_total: subtotal,
         });
@@ -382,12 +387,7 @@ export function OrderForm() {
                   value={quantity}
                   onChange={(e) => {
                     const value = e.target.value;
-                    if (value === "" || value === "0") {
-                      setQuantity(0);
-                    } else {
-                      const num = parseInt(value);
-                      setQuantity(num > 0 ? num : 0);
-                    }
+                    setQuantity(value);
                   }}
                   className="w-24 rounded-lg border border-input px-3 py-2 text-sm focus:border-rose focus:ring-1 focus:ring-rose/30 outline-none"
                 />
@@ -523,9 +523,9 @@ export function OrderForm() {
                 <span className="text-muted-foreground">Flavor: {selectedFlavor.name}</span>
               </div>
             )}
-            {quantity > 1 && (
+            {quantityNum > 1 && (
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Qty: ×{quantity}</span>
+                <span className="text-muted-foreground">Qty: ×{quantityNum}</span>
               </div>
             )}
             <div className="flex justify-between">
