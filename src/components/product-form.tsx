@@ -55,9 +55,10 @@ export function ProductForm({ mode, product, categories }: ProductFormProps) {
   const [slug, setSlug] = useState(product?.slug || "");
   const [description, setDescription] = useState(product?.description || "");
   const [categoryId, setCategoryId] = useState(
-    product?.category?.id || product?.category_id || (categories[0]?.id ?? "")
+    product?.category?.id || product?.category_id || ""
   );
-  const [leadTimeDays, setLeadTimeDays] = useState(product?.lead_time_days ?? 2);
+  const [basePrice, setBasePrice] = useState(product?.base_price?.toString() || "");
+  const [leadTimeDays, setLeadTimeDays] = useState(product?.lead_time_days?.toString() || "");
   const [isVisible, setIsVisible] = useState(product?.is_visible ?? true);
   const [isFeatured, setIsFeatured] = useState(product?.is_featured ?? false);
 
@@ -233,7 +234,7 @@ export function ProductForm({ mode, product, categories }: ProductFormProps) {
         description: description.trim(),
         base_price: basePrice,
         category_id: categoryId,
-        lead_time_days: leadTimeDays,
+        lead_time_days: parseInt(leadTimeDays) || 0,
         is_visible: isVisible,
         is_featured: isFeatured,
       };
@@ -498,12 +499,7 @@ export function ProductForm({ mode, product, categories }: ProductFormProps) {
                   value={leadTimeDays}
                   onChange={(e) => {
                     const value = e.target.value;
-                    if (value === "" || value === "0") {
-                      setLeadTimeDays(0);
-                    } else {
-                      const num = parseInt(value);
-                      setLeadTimeDays(num >= 0 ? num : 0);
-                    }
+                    setLeadTimeDays(value);
                   }}
                   min={0}
                   className="w-full rounded-lg border border-input px-3 py-2 text-sm focus:border-rose focus:ring-1 focus:ring-rose/30 outline-none"
