@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Facebook } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button-variants";
 import { cn } from "@/lib/utils";
 import { getOrderById } from "@/lib/queries";
 import { formatDate } from "@/lib/helpers";
+import { BUSINESS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Order Confirmed",
@@ -93,6 +94,21 @@ export default async function OrderConfirmationPage({
           <strong>What&apos;s next?</strong> We will confirm your order via
           phone or text. Payment is <strong>cash on pickup/delivery</strong>.
         </p>
+        
+        {BUSINESS.socialFacebook && (
+          <div className="flex items-center justify-center gap-2 pt-2">
+            <span className="text-sm text-muted-foreground">For more info, please visit</span>
+            <Link
+              href={BUSINESS.socialFacebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm text-rose hover:text-rose/80 hover:underline transition-colors"
+            >
+              <Facebook className="h-4 w-4" />
+              Facebook
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">

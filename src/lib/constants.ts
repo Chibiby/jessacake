@@ -61,7 +61,7 @@ export const BUSINESS = {
   phone: "", // To be confirmed with owner
   email: "", // To be confirmed with owner
   operatingHours: "Mon–Sat, 8:00 AM – 6:00 PM",
-  socialFacebook: "", // To be confirmed
+  socialFacebook: "https://www.facebook.com/jessa.vlog.384061",
   socialInstagram: "", // To be confirmed
 } as const;
 

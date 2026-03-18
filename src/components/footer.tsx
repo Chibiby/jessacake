@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Cake, MapPin, Clock, Phone, Mail } from "lucide-react";
+import { Cake, MapPin, Clock, Phone, Mail, Facebook } from "lucide-react";
 import { BUSINESS } from "@/lib/constants";
 
 export function Footer() {
@@ -94,20 +94,26 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Hours */}
+          {/* Social Media */}
           <div>
             <h3 className="mb-3 text-sm font-semibold text-foreground">
-              Business Hours
+              Follow Us
             </h3>
-            <p className="text-sm text-muted-foreground">
-              {BUSINESS.operatingHours}
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Sunday: Closed
-            </p>
+            <div className="space-y-2">
+              {BUSINESS.socialFacebook && (
+                <Link
+                  href={BUSINESS.socialFacebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-rose transition-colors"
+                >
+                  <Facebook className="h-4 w-4" />
+                  Facebook
+                </Link>
+              )}
+            </div>
             <p className="mt-4 text-xs text-muted-foreground">
-              Orders placed outside business hours will be reviewed the next
-              working day.
+              Follow us for updates, promotions, and cake showcases!
             </p>
           </div>
         </div>
