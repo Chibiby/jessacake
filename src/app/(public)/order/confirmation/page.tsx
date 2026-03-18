@@ -66,21 +66,21 @@ export default async function OrderConfirmationPage({
         
         {order && (
           <div className="mt-4 pt-4 border-t border-border">
-            <p className="text-sm text-muted-foreground mb-2">
-              <strong>Pickup/Delivery Details</strong>
+            <p className="text-xs text-muted-foreground mb-2 font-medium">
+              PICKUP / DELIVERY DETAILS
             </p>
             <div className="space-y-1">
-              <p className="text-sm">
-                Type: <span className="capitalize">{order.fulfillment_type}</span>
+              <p className="text-sm text-foreground">
+                Type: <span className="text-rose font-medium capitalize">{order.fulfillment_type}</span>
               </p>
               {order.preferred_date && (
-                <p className="text-sm">
-                  Date: {formatDate(order.preferred_date)}
+                <p className="text-sm text-foreground">
+                  Date: <span className="text-rose font-medium">{formatDate(order.preferred_date)}</span>
                 </p>
               )}
               {order.preferred_time && (
-                <p className="text-sm">
-                  Time: {order.preferred_time}
+                <p className="text-sm text-foreground">
+                  Time: <span className="text-rose font-medium">{order.preferred_time}</span>
                 </p>
               )}
             </div>
