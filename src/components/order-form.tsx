@@ -377,10 +377,18 @@ export function OrderForm() {
                 </label>
                 <input
                   type="number"
-                  min={1}
+                  min={0}
                   max={10}
                   value={quantity}
-                  onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (value === "" || value === "0") {
+                      setQuantity(0);
+                    } else {
+                      const num = parseInt(value);
+                      setQuantity(num > 0 ? num : 0);
+                    }
+                  }}
                   className="w-24 rounded-lg border border-input px-3 py-2 text-sm focus:border-rose focus:ring-1 focus:ring-rose/30 outline-none"
                 />
               </div>
