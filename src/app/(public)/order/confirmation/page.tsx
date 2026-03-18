@@ -105,7 +105,7 @@ export default async function OrderConfirmationPage({
               className="inline-flex items-center gap-1 text-sm text-rose hover:text-rose/80 hover:underline transition-colors"
             >
               <Facebook className="h-4 w-4" />
-              Facebook
+              Jessa Vlog (Jessa Cakes Malandag)
             </Link>
           </div>
         )}
