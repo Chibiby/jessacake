@@ -496,8 +496,16 @@ export function ProductForm({ mode, product, categories }: ProductFormProps) {
                 <input
                   type="number"
                   value={leadTimeDays}
-                  onChange={(e) => setLeadTimeDays(parseInt(e.target.value) || 2)}
-                  min={1}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (value === "" || value === "0") {
+                      setLeadTimeDays(0);
+                    } else {
+                      const num = parseInt(value);
+                      setLeadTimeDays(num >= 0 ? num : 0);
+                    }
+                  }}
+                  min={0}
                   className="w-full rounded-lg border border-input px-3 py-2 text-sm focus:border-rose focus:ring-1 focus:ring-rose/30 outline-none"
                 />
               </div>
@@ -543,7 +551,7 @@ export function ProductForm({ mode, product, categories }: ProductFormProps) {
                           value={size.price || ""}
                           onChange={(e) => updateSizeRow(index, "price", e.target.value)}
                           placeholder="0.00"
-                          min={1}
+                          min={0}
                           step="0.01"
                           className="w-full rounded-lg border border-input pl-7 pr-3 py-2 text-sm focus:border-rose focus:ring-1 focus:ring-rose/30 outline-none"
                         />
