@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getOrders } from "@/lib/queries";
 import { formatCurrency, formatDateTime } from "@/lib/helpers";
 import { ORDER_STATUSES, FULFILLMENT_TYPES, PAYMENT_STATUSES } from "@/lib/constants";
+import { DeleteOrderButton } from "@/components/orders/delete-button";
 
 export const metadata: Metadata = {
   title: "Manage Orders",
@@ -67,12 +68,18 @@ export default async function AdminOrdersPage() {
                         {order.created_at ? formatDateTime(order.created_at) : "—"}
                       </td>
                       <td className="px-4 py-3">
-                        <Link
-                          href={`/admin/orders/${order.id}`}
-                          className="text-xs text-rose hover:underline"
-                        >
-                          View
-                        </Link>
+                        <div className="flex items-center gap-2">
+                          <Link
+                            href={`/admin/orders/${order.id}`}
+                            className="text-xs text-rose hover:underline"
+                          >
+                            View
+                          </Link>
+                          <DeleteOrderButton 
+                            orderId={order.id} 
+                            referenceNumber={order.reference_number} 
+                          />
+                        </div>
                       </td>
                     </tr>
                   );

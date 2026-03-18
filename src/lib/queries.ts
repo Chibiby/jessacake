@@ -160,6 +160,20 @@ export async function getOrderById(id: string) {
   return data;
 }
 
+export async function deleteOrder(id: string) {
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("orders")
+    .delete()
+    .eq("id", id);
+
+  if (error) {
+    console.error("Error deleting order:", error.message);
+    throw new Error("Failed to delete order");
+  }
+  return true;
+}
+
 // --- Admin Stats ---
 
 export async function getAdminStats() {
